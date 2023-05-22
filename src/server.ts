@@ -1,3 +1,8 @@
-const str = 'carlos'
+import express from 'express'
+import { env } from '@/env'
 
-console.log(str)
+const app = express()
+
+app.listen(env.PORT, () =>
+  console.log(`HTTP Request Server Running 🚀 port:${env.PORT}`),
+)
