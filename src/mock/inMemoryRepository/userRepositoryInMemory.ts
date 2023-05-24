@@ -15,4 +15,13 @@ export class UserRepositoryInMemory implements IUserRepository {
     this.item.push(user)
     return user
   }
+
+  async findByEmail(email: string): Promise<User | null> {
+    const user = this.item.find((it) => it.email === email)
+
+    if (!user) {
+      return null
+    }
+    return user
+  }
 }
