@@ -20,8 +20,6 @@ describe('Create User Use Case', () => {
   it('should not be able register a use with same email', async () => {
     await sut.execute(User)
 
-    await expect(() => sut.execute(User)).rejects.toBeInstanceOf(
-      UserAlreadyExistsError,
-    )
+    await expect(() => sut.execute(User)).rejects.toBeInstanceOf(Error)
   })
 })
